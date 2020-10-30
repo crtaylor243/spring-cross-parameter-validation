@@ -38,7 +38,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"orderId\": \"1234-EXAMPLE\",\n    \"recipientName\": \"Joe Camel\",\n    \"orderPlaced\": \"2020-10-30T15:27:58.124169-05:00\",\n    \"deliveryStart\": \"2020-10-31T03:27:58.124904-05:00\",\n    \"deliveryEnd\": \"2020-11-01T02:27:58.124943-06:00\"\n}",
+					"raw": "{\n    \"orderId\": \"1234-EXAMPLE\",\n    \"recipientName\": \"Joe Camel\",\n    \"orderPlaced\": \"2020-10-30T15:27:58.124169-05:00\",\n    \"deliveryStart\": \"2020-11-02T03:27:58.124904-05:00\",\n    \"deliveryEnd\": \"2020-11-01T02:27:58.124943-06:00\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -46,12 +46,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{server}}/order",
+					"raw": "{{server}}/submit",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
-						"order"
+						"submit"
 					]
 				}
 			},
