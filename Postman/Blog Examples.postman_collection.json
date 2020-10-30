@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "9f300391-4167-49bd-92e1-99f809467ce2",
+		"name": "Blog Examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Valid Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": \"1234-EXAMPLE\",\n    \"recipientName\": \"Joe Camel\",\n    \"orderPlaced\": \"2020-10-30T15:27:58.124169-05:00\",\n    \"deliveryStart\": \"2020-10-31T03:27:58.124904-05:00\",\n    \"deliveryEnd\": \"2020-11-01T02:27:58.124943-06:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/submit",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Order - Bad Delivery Window",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderId\": \"1234-EXAMPLE\",\n    \"recipientName\": \"Joe Camel\",\n    \"orderPlaced\": \"2020-10-30T15:27:58.124169-05:00\",\n    \"deliveryStart\": \"2020-10-31T03:27:58.124904-05:00\",\n    \"deliveryEnd\": \"2020-11-01T02:27:58.124943-06:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/order",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Order - Missing Order ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{        \n    \"recipientName\": \"Joe Camel\",\n    \"orderPlaced\": \"2020-10-30T15:27:58.124169-05:00\",\n    \"deliveryStart\": \"2020-10-31T03:27:58.124904-05:00\",\n    \"deliveryEnd\": \"2020-11-01T02:27:58.124943-06:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/submit",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sample Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/example",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"example"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
